@@ -1,0 +1,12 @@
+{
+  "name": "env-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Mirza Brunjadze <brunjadzem@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^9.6.4"
+  }
+}

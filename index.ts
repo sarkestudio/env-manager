@@ -1,4 +1,13 @@
-export class EnvItem {
+export interface IEnvItem {
+  number: number
+  boolean: boolean
+}
+
+export interface IEnvCollection {
+  get(key: string): IEnvItem
+}
+
+class EnvItem implements IEnvItem {
   constructor(public key: string, public value: string) {}
 
   get number(): number {
@@ -10,20 +19,20 @@ export class EnvItem {
   }
 }
 
-export class EnvCollection {
+class EnvCollection implements IEnvCollection {
   constructor(private items: EnvItem[]) {}
 
-  get(key: string): EnvItem {
+  get(key: string): IEnvItem {
       return this.items.find(item => item.key === key)
   }
 }
 
 export class EnvManager {
-  static get(key: string): EnvItem {
+  static get(key: string): IEnvItem {
       return new EnvItem(key, process.env[key])
   }
 
-  static collection(prefix: string, delimiter = "_"): EnvCollection {
+  static collection(prefix: string, delimiter = "_"): IEnvCollection {
       const keyOffset = prefix.length + delimiter.length
       const collection = Object.keys(process.env)
           .filter(key => key.startsWith(prefix.concat(delimiter)))

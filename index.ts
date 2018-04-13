@@ -1,4 +1,6 @@
 export interface IEnvItem {
+  key: string
+  value: string
   number: number
   boolean: boolean
 }

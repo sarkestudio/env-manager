@@ -1,4 +1,4 @@
-class EnvItem {
+export class EnvItem {
   constructor(public key: string, public value: string) {}
 
   get number(): number {
@@ -10,7 +10,7 @@ class EnvItem {
   }
 }
 
-class EnvCollection {
+export class EnvCollection {
   constructor(private items: EnvItem[]) {}
 
   get(key: string): EnvItem {

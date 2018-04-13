@@ -1,8 +1,9 @@
 {
-  "name": "env-manager",
+  "name": "@sarke/env-manager",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js environment variables manager.",
   "main": "index.js",
+  "typings": "index.d.ts",
   "keywords": [],
   "author": "Mirza Brunjadze <brunjadzem@gmail.com>",
   "license": "MIT",
